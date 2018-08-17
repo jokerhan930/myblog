@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="banner">
+	<div class="content">
+	<header class="major">
+			<h2>博客列表</h2>
+	</header>
+	{%  for article in articles %}
+	<div class="box row">
+		<div class="4u 12u$(small) ">
+				<a style="" href="">
+					<img src=" {{article.image.url}} " style="width:100%" alt="" />
+				</a>
+		</div>
+		<div class="8u$ 12u$(small)">
+			<h3>{{ article.title }}</h3>
+			<p>{{ article.subs }}</p>
+		</div>
+	</div>
+	{% endfor %}
+	<ul class="pagination">
+		<li><span class="button disabled">上页</span></li>
+		<li><a href="#" class="page active">1</a></li>
+		<li><a href="#" class="page">2</a></li>
+		<li><a href="#" class="button">下页</a></li>
+	</ul>
+	</div>
+</section>
+
+{% endblock content %}

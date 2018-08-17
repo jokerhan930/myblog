@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section id="banner">
+		<div class="content">
+		<h3>博主列表</h3>
+		<br/>
+			<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>昵称</th>
+							<th>博主类型</th>
+							<th>性别</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for author in authors %}
+						
+						<tr>
+							<td>{{ author.nickname }}</td>
+								{% if author.ace == True %}
+								<td>大牛博主</td>
+								{% else %}
+								<td>普通博主</td>
+								{% endif %}
+							
+								{% if author.sex == True %}
+								<td>性别：男</td>
+								{% elif author.sex == False %}
+								<td>性别：女</td>
+								{% elif author.sex == None %}
+								<td>性别：保密</td>
+								{% endif %}
+								<td><a href="{% url 'blog:author' author.id %}">更多</a></td>
+						</tr>
+						
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+	</section>
+{% endblock content %}

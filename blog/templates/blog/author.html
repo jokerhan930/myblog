@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section id="banner">
+		<div class="content">
+			
+				<h3>博主信息</h3>
+				<ul class="alt">
+					<li>{{ author.nickname }}</li>
+					{% if author.sex == True %}
+					<li>性别：男</li>
+					{% elif author.sex == False %}
+					<li>性别：女</li>
+					{% elif author.sex == None %}
+					<li>性别：保密</li>
+					{% endif %}
+					{% if author.ace == True %}
+					<li>大牛博主</li>
+					{% else %}
+					<li>普通博主</li>
+					{% endif %}
+					<li>联系方式：{{ author.email }}</li>
+					<li>个性签名：{{ author.description }}</li>
+				</ul>
+				
+			
+			<p></p>
+			<p>
+				<b> </b>
+				 
+			</p>
+
+			<ul class="actions">
+				<li><a href="" class="icon fa-heart"> 赞一个吧</a></li>
+				
+			</ul>
+		</div>
+		<span class="image object">
+			<img src="" alt="" />
+		</span>
+	</section>
+{% endblock content %}

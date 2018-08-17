@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>博客系统</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/blog.css' %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+	</head>
+	<body style="background:url('{% static 'images/body.jpg' %}');background-size: cover ">
+	<div class="content">
+			<div class="hello 3u$ 12u$(xsmall)">
+				<div class="10u$ hello_banner">
+					<ul class="logHead">
+						<li style="border-right: 1px solid white;">登陆</li>
+						<li style="border-left: 1px solid white;">注册</li>
+					</ul>
+					<ul>
+						<li>
+							<form action="" method="post">
+								{% csrf_token %}
+								<div class="row uniform">
+									<div class="12u$">
+										<input name='uname' class="" type="text" placeholder="用户名">
+									</div>
+									<div class="12u$">
+										<input name='password1' class="" type="password" placeholder="密码">
+									</div>								    
+								    <div class="12u$">
+								    	<ul class="actions">
+								    		<li><input type="submit" class="special" value="登录"></li>
+								    	</ul>
+								    </div>								    
+							    </div>
+							</form>
+							<p>{{ errors }}</p>
+						</li>
+						<li>
+							<form action="" method="post">
+								{% csrf_token %}
+								<div class="row uniform">
+									<div class="12u$">
+										<input name='uname' class="" type="text" placeholder="用户名">
+									</div>
+									<div class="12u$">
+										<input name='password1' class="" type="password" placeholder="密码">
+									</div>
+									<div class="12u$">
+										<input name='password2' class="" type="password" placeholder="再次输入密码">
+									</div>
+									<div class="12u$">
+										<input name='email' class="" type="email" placeholder="邮箱">
+									</div>
+								    
+								    <div class="12u$">
+								    	<ul class="actions">
+								    		<li><input type="submit" class="special" value="登录"></li>
+								    		<li><input type="reset" value="重置" /></li>
+								    	</ul>
+								    </div>
+									
+								    
+							    </div>
+							</form>
+							<p>{{ errors }}</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+	</div>
+		
+	
+
+		
+	<!-- Scripts -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/skel.min.js' %}"></script>
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="{% static 'assets/js/main.js' %}"></script>
+	
+	</body>
+</html>

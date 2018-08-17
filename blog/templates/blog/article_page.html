@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Banner -->
+	<section id="banner">
+		<div class="content">
+			<header style="">
+				<h1>{{ article.title }}</h1>
+				<h2>作者：{{ article.author }}</h2>
+				<p>{{ article.subs }}</p>			
+			</header>
+			
+			<p>{{ article.content }}</p>
+			<p>
+				该博客最后发表于 
+				<b>{{ article.pagetime }} </b>
+				  <a href="" class="icon fa-heart"></a> 10
+			</p>
+
+			<ul class="actions">			
+
+					<div class="12u$">
+						<textarea placeholder="用户名"></textarea>
+					</div>
+			<br>
+				<a href="#comment" class="button big">评论</a></li>			
+			</ul>
+			<p> 扫描二维码在移动端观看这篇博客:</p>
+				<img class="qrcode" src="data:image/png;base64,{{ codeimg }}" alt=""/>		
+		</div>
+		<span class="image object">
+					<img style="height:280px" src="{{article.image.url}}" alt="" />
+					<div class="other_articles">
+						<ul>
+							
+						</ul>
+					</div>
+		</span>	
+	</section>
+{% endblock content %}

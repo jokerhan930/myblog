@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Banner -->
+	<section id="banner">
+		<div class="content">
+			<header>
+				<h2>基于python的博客系统<br />
+				--jokerhan</h2>
+				<p>关于毕业设计的博客系统</p>
+			</header>
+			<p>本博客系统由html5和css3技术编写，Django为框架，python处理逻辑。</p>
+			<ul class="actions">
+				<li><a href="/generic" class="button big">更多</a></li>
+			</ul>
+		</div>
+		<span class="image object">
+			<img src="{% static 'images/pic10.jpg' %}" alt="" />
+		</span>
+	</section>
+
+<!-- Section -->
+	<section>
+		<header class="major">
+			<h2>博客介绍</h2>
+		</header>
+		<div class="features">
+			{% for blogintro in blogintros %}
+			<article class="6u$(xsmall)">
+				<span class="icon {{ blogintro.icon }}"></span>
+				<div class="content">
+					<h3>{{ blogintro.title }}</h3>
+					<p>{{ blogintro.content }}</p>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</section>
+
+<!-- Section -->
+	<section>
+		<header class="major">
+			<h2>热门博客推荐</h2>
+		</header>
+		<div class="posts">
+			{%  for article in articles %}
+			<article>
+				<a href="#" class="image"><img src="{{article.image.url}}" alt="" /></a>
+				<h3>{{ article.title }}</h3>
+				<p>{{ article.subs }}</p>
+				<ul class="actions">
+					<li><a href="{% url 'blog:article_page' article.id %}" class="button">更多</a></li>
+				</ul>
+			</article>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock content %}
